@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from django.core.urlresolvers import reverse
 
 from rest_framework.test import APITestCase
 
@@ -11,9 +10,9 @@ class ApiTests(APITestCase):
         Ensure we can create a new account object.
         """
 
-        url = reverse('words/en/9')
+        url = 'words/en/9'
         response = self.client.get(url, format='json')
-        self.assertEqual(response.data, {
+        self.assertEqual(response.data[0], {
             "id": 9,
             "title": "black",
             "language": "en",
