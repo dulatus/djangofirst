@@ -23,7 +23,6 @@ class LangWord(generics.ListAPIView):
             queryset = Word.objects.filter(language=language)
             return queryset
 
-
 class TitleWord(generics.ListAPIView):
     serializer_class = DetailSerializer
 
